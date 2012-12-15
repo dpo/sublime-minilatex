@@ -1,0 +1,11 @@
+[
+  // Clean up LaTeX auxiliary files.
+  {
+   "keys": ["alt+shift+c"],
+   "command": "run_latex_build",
+   "args": {
+            "build_system": "Packages/User/CleanLatexFiles.sublime-build",
+            "reset_to": "Packages/LaTeXTools/LaTeX.sublime-build"
+           }
+  }
+]
