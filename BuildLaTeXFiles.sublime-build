@@ -1,6 +1,6 @@
 {
-  "cmd": ["latexmk", "-pdf", "-f", "$file"],
-  "shell": true,
+  "cmd": ["latexmk", "-pdf", "-f", "$file_path/$file_base_name.tex"],
+  "shell": false,  // Important!
   "working_dir": "$file_path",
   "path": "$PATH:/usr/texbin:/usr/local/bin",
   "file_regex": "^(...*?):([0-9]+): ([0-9]*)([^\\.]+)",
