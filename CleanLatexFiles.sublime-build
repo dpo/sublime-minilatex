@@ -1,6 +1,6 @@
 {
     "cmd": ["latexmk", "-C"],
-    "working_dir": "$file_path",
+    "working_dir": "$project_path",
     "path": "$PATH:/usr/texbin:/usr/local/bin",
     "file_regex": "^(...*?):([0-9]+): ([0-9]*)([^\\.]+)",
     "selector": "text.tex.latex"
