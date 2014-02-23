@@ -6,9 +6,17 @@ In order to use this plugin, clone this repository in your `~/Library/Applicatio
 
 ## Usage
 
-* Building: `⌘-B`
-* Previewing PDF: `⌘-shift-B`
-* Cleaning up: `alt-shift-C`
+Function        | Command
+----------------|--------------
+Build           | `⌘-B`
+Preview PDF     | `⌘-shift-B`
+Clean up        | `alt-shift-C`
+Run BibTeX      | `alt-shift-B`
+Refresh Preview | `alt-shift-P`
+
+## Everything Should Be a Project
+
+Whether your document has a single or multiple source files, every document should be part of a Sublime project. This allows you to edit a source file that isn't the master source file and still be able to compile the master file with `⌘-B`. The project name should be the same as the master file's base name. For example, if your master file is `mydocument.tex`, the project name should be `mydocument`.
 
 ## Using Preview
 
@@ -18,11 +26,11 @@ By default, `Preview.app` is the PDF previewer. An advantage of Preview is that 
 
 You can change the PDF previewer in `BuildLaTeXFiles.sublime-build`. It is currently set to `Preview.app` but you could also use [`Skim.app`](http://skim-app.sourceforge.net). Simply replace the line
 
-    "cmd": ["open", "-a", "Preview.app", "$file_path/$file_base_name.pdf"],
+    "cmd": ["open", "-a", "Preview.app", "$project_path/$file_base_name.pdf"],
 
 with
 
-    "cmd": ["open", "-a", "Skim.app", "$file_path/$file_base_name.pdf"],
+    "cmd": ["open", "-a", "Skim.app", "$project_path/$file_base_name.pdf"],
 
 ## Customizing
 
