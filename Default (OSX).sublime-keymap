@@ -11,6 +11,18 @@
       { "key": "selector", "operator": "equal", "operand": "text.tex.latex" }
     ]
   },
+  // Run BibTeX.
+  {
+    "keys": ["alt+shift+b"],
+    "command": "run_latex_build",
+    "args": {
+      "build_system": "Packages/LaTeX/BibTeX.sublime-build",
+      "reset_to": "Packages/LaTeX/BuildLaTeXFiles.sublime-build"
+    },
+    "context": [
+      { "key": "selector", "operator": "equal", "operand": "text.tex.latex" }
+    ]
+  },
   // Refresh Preview to simulate auto-update.
   // defaults write com.apple.Preview NSAppleScriptEnabled -bool true
   {
