@@ -1,5 +1,5 @@
-import sublime
 import sublime_plugin
+
 
 class RunLatexBuildCommand(sublime_plugin.WindowCommand):
     def run(self, build_system, reset_to):
