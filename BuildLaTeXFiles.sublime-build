@@ -8,7 +8,7 @@
 
   "variants": [ // Preview PDF.
     {
-      "cmd": ["open", "-a", "Skim.app", "$project_path/$project_base_name.pdf"],
+      "cmd": ["open", "-a", "Preview.app", "$project_path/$project_base_name.pdf"],
       "shell": false,
       "name": "BuildLaTeX: Preview PDF"
     },
