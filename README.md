@@ -70,3 +70,7 @@ $bibtex_use = 2;
 ````
 
 See the `latexmk` man page for more options.
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/dpo/sublime-minilatex/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
