@@ -1,24 +1,24 @@
 [
-  // Clean up LaTeX auxiliary files.
   {
     "keys": ["alt+shift+c"],
-    "command": "run_latex_build",
-    "args": {
-      "build_system": "Packages/LaTeX/CleanLatexFiles.sublime-build",
-      "reset_to": "Packages/LaTeX/BuildLaTeXFiles.sublime-build"
-    },
+    "command": "build",
+    "args": {"variant": "BuildLaTeX: Cleanup LaTeX Cruft"},
     "context": [
       { "key": "selector", "operator": "equal", "operand": "text.tex.latex" }
     ]
   },
-  // Run BibTeX.
   {
     "keys": ["alt+shift+b"],
-    "command": "run_latex_build",
-    "args": {
-      "build_system": "Packages/LaTeX/BibTeX.sublime-build",
-      "reset_to": "Packages/LaTeX/BuildLaTeXFiles.sublime-build"
-    },
+    "command": "build",
+    "args": {"variant": "BuildLaTeX: Run BibTeX"},
+    "context": [
+      { "key": "selector", "operator": "equal", "operand": "text.tex.latex" }
+    ]
+  },
+  {
+    "keys": ["alt+shift+l"],
+    "command": "build",
+    "args": {"variant": "BuildLaTeX: Parse Log File"},
     "context": [
       { "key": "selector", "operator": "equal", "operand": "text.tex.latex" }
     ]
@@ -27,11 +27,8 @@
   // defaults write com.apple.Preview NSAppleScriptEnabled -bool true
   {
     "keys": ["alt+shift+p"],
-    "command": "run_latex_build",
-    "args": {
-      "build_system": "Packages/LaTeX/RefreshPreview.sublime-build",
-      "reset_to": "Packages/LaTeX/BuildLaTeXFiles.sublime-build"
-    },
+    "command": "build",
+    "args": {"variant": "BuildLaTeX: Refresh Preview"},
     "context": [
       { "key": "selector", "operator": "equal", "operand": "text.tex.latex" }
     ]
