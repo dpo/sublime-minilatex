@@ -41,13 +41,15 @@
       { "key": "selector", "operator": "equal", "operand": "text.tex.latex" }
     ]
   },
+  // Foward sync (Skim only).
   {
     "keys": ["alt+shift+f"],
-    "command": "fwdsync",
+    "command": "forward_sync",
     "args": {
-      "pdf_file": "$project_path/$project_base_name.pdf",
-      "tex_file": "$file_path/$file_base_name.tex",
       "skim_location": "/Applications"   // Optional. Change if non-standard location.
-    }
+    },
+    "context": [
+      { "key": "selector", "operator": "equal", "operand": "text.tex.latex" }
+    ]
   }
 ]
