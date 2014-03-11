@@ -10,7 +10,7 @@
     {
       "cmd": ["open", "-a", "Preview.app", "$project_path/$project_base_name.pdf"],
       "shell": false,
-      "name": "BuildLaTeX: Preview PDF"
+      "name": "MiniLaTeX: Preview PDF"
     },
     {
       "cmd": ["latexmk", "-C"],
@@ -18,7 +18,7 @@
       "path": "$PATH:/usr/texbin:/usr/local/bin",
       "file_regex": "^(...*?):([0-9]+): ([0-9]*)([^\\.]+)",
       "selector": "text.tex.latex",
-      "name": "BuildLaTeX: Cleanup LaTeX Cruft"
+      "name": "MiniLaTeX: Cleanup LaTeX Cruft"
     },
     {
       "cmd": ["osascript", "-e", "tell application \"Preview\" to activate", "-e", "tell application \"Sublime Text\" to activate"],
@@ -26,7 +26,7 @@
       "path": "$PATH:/usr/texbin:/usr/local/bin",
       "file_regex": "^(...*?):([0-9]+): ([0-9]*)([^\\.]+)",
       "selector": "text.tex.latex",
-      "name": "BuildLaTeX: Refresh Preview"
+      "name": "MiniLaTeX: Refresh Preview"
     },
     {
       "cmd": ["bibtex", "$project_path/$project_base_name"],
@@ -34,7 +34,7 @@
       "path": "$PATH:/usr/texbin:/usr/local/bin",
       "file_regex": "^(...*?):([0-9]+): ([0-9]*)([^\\.]+)",
       "selector": "text.tex.latex",
-      "name": "BuildLaTeX: Run BibTeX"
+      "name": "MiniLaTeX: Run BibTeX"
     },
     {
       "cmd": ["rubber-info --check $project_path/$project_base_name && rubber-info --boxes $project_path/$project_base_name"],
@@ -44,7 +44,7 @@
       "file_regex": "^(...*?):([0-9]+): ([0-9]*)([^\\.]+)",
       // "line_regex": ":([0-9-]+):",
       "selector": "text.tex.latex",
-      "name": "BuildLaTeX: Parse Log File"
-    }
+      "name": "MiniLaTeX: Parse Log File"
+    },
   ]
 }
