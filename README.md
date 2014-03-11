@@ -1,22 +1,40 @@
-# Sublime Minimalistic LaTeX Plugin
+# Sublime Text Minimalistic LaTeX Plugin
 
-This is a bare-bones, minimalistic, trimmed-down, lean LaTeX plugin for Sublime Text 3. It doesn't parse the log file. It doesn't provide LaTeX snippets or reference/citation completion.
+This is a bare-bones, minimalistic, trimmed-down, lean LaTeX plugin for Sublime Text 3. The plugin uses `latexmk` to build, so I presume that any platform where this script is available should be supported, although I've only tested on OSX.
 
-In order to use this plugin, clone this repository in your `~/Library/Application Support/Sublime Text 3/Packages`. In `Tools>Build System`, make sure that `BuildLaTeXFiles` is selected.
+## How to Install
 
-## Usage
+````
+cd ~/Library/Application Support/Sublime Text 3/Packages
+git clone https://github.com/dpo/sublime-minilatex.git minilatex
+````
 
-Function        | Command
-----------------|--------------
-Build           | `⌘-B`
-Preview PDF     | `⌘-shift-B`
-Clean up        | `alt-shift-C`
-Run BibTeX      | `alt-shift-B`
-Refresh Preview | `alt-shift-P`
+In `Tools>Build System`, make sure that `BuildLaTeXFiles` is selected.
 
 ## Everything Should Be a Project
 
 Whether your document has a single or multiple source files, every document should be part of a Sublime project. This allows you to edit a source file that isn't the master source file and still be able to compile the master file with `⌘-B`. The project name should be the same as the master file's base name. For example, if your master file is `mydocument.tex`, the project name should be `mydocument`.
+
+Function        | Command       | Notes
+----------------|---------------|-------------------------
+Build           | `⌘-B`         |
+Preview PDF     | `⌘-shift-B`   |
+List errors     | `alt-shift-L` | (requires [Rubber](https://launchpad.net/rubber))
+Clean up        | `alt-shift-C` |
+Run BibTeX      | `alt-shift-B` |
+Refresh Preview | `alt-shift-P` | (only if not using Skim)
+[Command Summary]
+
+## Navigating LaTeX Errors and Warnings
+
+Currently, the log file is not parsed to facilitate error reporting. However, the Sublime build system is able to recognize errors (to some extent). Once the build is finished, hit `F4`/`shift-F4` to navigate through the error messages.
+
+Optionally, you may install [Rubber](https://launchpad.net/rubber) and hit `alt-shift-L` to display a trimmed-down version of the log. On OSX, if you use [Homebrew](http://brew.sh), it's a simple matter of running
+````
+brew install rubber
+````
+
+Linux users can use [Linuxbrew](https://github.com/Homebrew/linuxbrew).
 
 ## Using Preview
 
@@ -31,6 +49,10 @@ You can change the PDF previewer in `BuildLaTeXFiles.sublime-build`. It is curre
 with
 
     "cmd": ["open", "-a", "Skim.app", "$project_path/$file_base_name.pdf"],
+
+## Companions
+
+* [Sublime BibTeX](https://github.com/dpo/sublime-bibtex): BibTeX snippets
 
 ## Customizing
 
