@@ -15,6 +15,8 @@ In `Tools>Build System`, make sure that `BuildLaTeXFiles` is selected.
 
 Whether your document has a single or multiple source files, every document should be part of a Sublime project. This allows you to edit a source file that isn't the master source file and still be able to compile the master file with `⌘-B`. The project name should be the same as the master file's base name. For example, if your master file is `mydocument.tex`, the project name should be `mydocument`.
 
+## Command Summary
+
 Function        | Command       | Notes
 ----------------|---------------|-------------------------
 Build           | `⌘-B`         |
@@ -23,7 +25,7 @@ List errors     | `alt-shift-L` | (requires [Rubber](https://launchpad.net/rubbe
 Clean up        | `alt-shift-C` |
 Run BibTeX      | `alt-shift-B` |
 Refresh Preview | `alt-shift-P` | (only if not using Skim)
-[Command Summary]
+Forward Sync    | `alt-shift-f` | (only if using Skim)
 
 ## Navigating LaTeX Errors and Warnings
 
