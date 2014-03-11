@@ -2,7 +2,7 @@
   {
     "keys": ["super+shift+b"],
     "command": "build",
-    "args": {"variant": "BuildLaTeX: Preview PDF"},
+    "args": {"variant": "MiniLaTeX: Preview PDF"},
     "context": [
       { "key": "selector", "operator": "equal", "operand": "text.tex.latex" }
     ]
@@ -10,7 +10,7 @@
   {
     "keys": ["alt+shift+c"],
     "command": "build",
-    "args": {"variant": "BuildLaTeX: Cleanup LaTeX Cruft"},
+    "args": {"variant": "MiniLaTeX: Cleanup LaTeX Cruft"},
     "context": [
       { "key": "selector", "operator": "equal", "operand": "text.tex.latex" }
     ]
@@ -18,7 +18,7 @@
   {
     "keys": ["alt+shift+b"],
     "command": "build",
-    "args": {"variant": "BuildLaTeX: Run BibTeX"},
+    "args": {"variant": "MiniLaTeX: Run BibTeX"},
     "context": [
       { "key": "selector", "operator": "equal", "operand": "text.tex.latex" }
     ]
@@ -26,7 +26,7 @@
   {
     "keys": ["alt+shift+l"],
     "command": "build",
-    "args": {"variant": "BuildLaTeX: Parse Log File"},
+    "args": {"variant": "MiniLaTeX: Parse Log File"},
     "context": [
       { "key": "selector", "operator": "equal", "operand": "text.tex.latex" }
     ]
@@ -36,18 +36,20 @@
   {
     "keys": ["alt+shift+p"],
     "command": "build",
-    "args": {"variant": "BuildLaTeX: Refresh Preview"},
+    "args": {"variant": "MiniLaTeX: Refresh Preview"},
     "context": [
       { "key": "selector", "operator": "equal", "operand": "text.tex.latex" }
     ]
   },
+  // Foward sync (Skim only).
   {
     "keys": ["alt+shift+f"],
-    "command": "fwdsync",
+    "command": "forward_sync",
     "args": {
-      "pdf_file": "$project_path/$project_base_name.pdf",
-      "tex_file": "$file_path/$file_base_name.tex",
       "skim_location": "/Applications"   // Optional. Change if non-standard location.
-    }
+    },
+    "context": [
+      { "key": "selector", "operator": "equal", "operand": "text.tex.latex" }
+    ]
   }
 ]
