@@ -1,5 +1,13 @@
 [
   {
+    "keys": ["super+shift+b"],
+    "command": "build",
+    "args": {"variant": "BuildLaTeX: Preview PDF"},
+    "context": [
+      { "key": "selector", "operator": "equal", "operand": "text.tex.latex" }
+    ]
+  },
+  {
     "keys": ["alt+shift+c"],
     "command": "build",
     "args": {"variant": "BuildLaTeX: Cleanup LaTeX Cruft"},
@@ -32,5 +40,14 @@
     "context": [
       { "key": "selector", "operator": "equal", "operand": "text.tex.latex" }
     ]
+  },
+  {
+    "keys": ["alt+shift+f"],
+    "command": "fwdsync",
+    "args": {
+      "pdf_file": "$project_path/$project_base_name.pdf",
+      "tex_file": "$file_path/$file_base_name.tex",
+      "skim_location": "/Applications"   // Optional. Change if non-standard location.
+    }
   }
 ]
