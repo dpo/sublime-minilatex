@@ -22,5 +22,4 @@ class ForwardSyncCommand(TextCommand):
     line, _ = self.view.rowcol(self.view.sel()[0].end())
     line += 1  # ST line numbers are zero based.
 
-    print(displayline, line, pdf_file, tex_file)
     subprocess.call([displayline, '-r', '-g', str(line), pdf_file, tex_file])
