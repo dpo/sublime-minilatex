@@ -26,7 +26,7 @@ Preview PDF     | `⌘-shift-B`   |
 List errors     | `alt-shift-L` | (requires [Rubber](https://launchpad.net/rubber))
 Clean up        | `alt-shift-C` |
 Run BibTeX      | `alt-shift-B` |
-Refresh Preview | `alt-shift-P` | (only if not using Skim)
+Refresh Preview | `alt-shift-P` | (only if using Preview)
 Forward Sync    | `alt-shift-f` | (only if using Skim)
 
 ## Navigating LaTeX Errors and Warnings
@@ -40,11 +40,17 @@ brew install rubber
 
 Linux users can use [Linuxbrew](https://github.com/Homebrew/linuxbrew).
 
-## Using Preview
+## PDF Viewers
 
-By default, Preview is the PDF previewer. An advantage of Preview is that it ships with OSX. A disadvantage is that it doesn't automatically refresh the display when the PDF file is updated unless you go and click in the Preview window, which is inconvenient. To simulate auto-update, I included the special command `alt-shift-P` (P is for Preview). which is a simple AppleScript command to activate the Preview window, causing the PDF to be refreshed, and then switch the focus back to Sublime. Simplistic and easy to fool, but functional.
+### Preview
 
-## Using Skim
+Why Preview? By default, Preview is the PDF previewer. An advantage of Preview is that it ships with OSX. A disadvantage is that it doesn't automatically refresh the display when the PDF file is updated unless you go and click in the Preview window, which is inconvenient. To simulate auto-update, I included the special command `alt-shift-P` (P is for Preview). which is a simple AppleScript command to activate the Preview window, causing the PDF to be refreshed, and then switch the focus back to Sublime. Simplistic and easy to fool, but functional.
+
+Another useful Preview feature for TeX composing is the magnifier. While in Preview, hit the tilde `~` key and a magnifier window appears. You can zoom in or out by pinching or expanding on your trackpad or using the `+` and `-` keys. Hit `~` again and the magnifier disappears.
+
+The only disadvantage of Preview in my opinion is that if you zoomed into your PDF so the window doesn't show the entire page, refreshing the PDF will reset the view port to the origin. Skim and TeXShop don't have this annoyance, but they have their own disadvantages.
+
+### Skim
 
 You can change the PDF previewer in `MiniLaTeX.sublime-build`. It is currently set to `Preview.app` but you could also use [`Skim.app`](http://skim-app.sourceforge.net). Simply replace the line
 
@@ -53,6 +59,22 @@ You can change the PDF previewer in `MiniLaTeX.sublime-build`. It is currently s
 with
 
     "cmd": ["open", "-a", "Skim.app", "$project_path/$file_base_name.pdf"],
+
+Skim also comes with a magnifying tool (the default keybinding is `⌘-3`).
+
+The disadvantage of Skim in my opinion is that when your document contains errors and doesn't compile, Skim stops noticing that the PDF is updated once the errors are fixed, and must be restarted.
+
+### TeXShop
+
+Here, we're only using [TeXShop](http://pages.uoregon.edu/koch/texshop) for its PDF viewer. In the TexShop preferences,
+
+* check "Configure for External Editor" and uncheck "Open Empty Document" in Source > On Startup,
+* check "Automatic Preview Update" in Preview > External Editor,
+* check "Continue Editing" in Typesetting > After Typesetting.
+
+Adjust the other settings to your liking. In `MiniLaTeX.sublime-build`, use `TeXShop.app` instead of `Skim.app` as in the previous section.
+
+I haven't yet determined how to configure forward and reverse sync.
 
 ## Companions
 
